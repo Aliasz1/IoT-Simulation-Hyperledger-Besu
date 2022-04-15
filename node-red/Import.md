@@ -4,5 +4,5 @@
 4. install the required palettes
 
 palettes
-node-red-contrib-iot
+node-red-contrib-iot-device
 node-red-node-random
