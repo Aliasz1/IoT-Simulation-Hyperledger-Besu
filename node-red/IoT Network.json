@@ -1,0 +1,553 @@
+[
+    {
+        "id": "f5d52e50a36fc5fd",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9b6bb46b.05fc28",
+        "type": "start virtual device",
+        "z": "f5d52e50a36fc5fd",
+        "name": "",
+        "deviceId": "001",
+        "schema": "fccc0105.d3f1b8",
+        "outputs": 1,
+        "x": 470,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "73bb7851.2cd4b8",
+        "type": "start virtual device",
+        "z": "f5d52e50a36fc5fd",
+        "name": "",
+        "deviceId": "002",
+        "schema": "fccc0105.d3f1b8",
+        "outputs": 1,
+        "x": 470,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e4139d20.3d2ea",
+        "type": "start virtual device",
+        "z": "f5d52e50a36fc5fd",
+        "name": "",
+        "deviceId": "003",
+        "schema": "fccc0105.d3f1b8",
+        "outputs": 1,
+        "x": 470,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "554f44f9.96e69c",
+        "type": "start virtual device",
+        "z": "f5d52e50a36fc5fd",
+        "name": "",
+        "deviceId": "004",
+        "schema": "fccc0105.d3f1b8",
+        "outputs": 1,
+        "x": 470,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a3947a58.744ac",
+        "type": "device function",
+        "z": "f5d52e50a36fc5fd",
+        "deviceId": "001",
+        "schema": "fccc0105.d3f1b8",
+        "name": "",
+        "func": "msg.date = new Date(Time);\nmsg.sensorId = parseInt(msg.payload.deviceId);\nmsg.Value = parseInt(Temperature);\n\n//msg.payload = {\n//    \"method\":\"addData\",\n//   \"args\":[data]\n//};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 340,
+        "y": 480,
+        "wires": [
+            [
+                "452f3c0408c61e79",
+                "d97e5a1778ff9366"
+            ]
+        ]
+    },
+    {
+        "id": "8e03af77.b63bd8",
+        "type": "generate event",
+        "z": "f5d52e50a36fc5fd",
+        "deviceId": "001",
+        "schema": "fccc0105.d3f1b8",
+        "evt": "d5783c1af12a",
+        "name": "",
+        "x": 780,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9a730bc9.a2b97",
+        "type": "generate event",
+        "z": "f5d52e50a36fc5fd",
+        "deviceId": "002",
+        "schema": "fccc0105.d3f1b8",
+        "evt": "d5783c1af12a",
+        "name": "",
+        "x": 780,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9c97842a.f5a05",
+        "type": "generate event",
+        "z": "f5d52e50a36fc5fd",
+        "deviceId": "003",
+        "schema": "fccc0105.d3f1b8",
+        "evt": "d5783c1af12a",
+        "name": "",
+        "x": 780,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "887a8931.f4f8",
+        "type": "generate event",
+        "z": "f5d52e50a36fc5fd",
+        "deviceId": "004",
+        "schema": "fccc0105.d3f1b8",
+        "evt": "d5783c1af12a",
+        "name": "",
+        "x": 780,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e23ea22b.f9185",
+        "type": "set properties",
+        "z": "f5d52e50a36fc5fd",
+        "deviceId": "001",
+        "schema": "fccc0105.d3f1b8",
+        "name": "",
+        "propAll": false,
+        "prop": "55cd4a1f9bfb",
+        "valueType": "msg",
+        "value": "payload",
+        "x": 540,
+        "y": 240,
+        "wires": [
+            [
+                "8e03af77.b63bd8"
+            ]
+        ]
+    },
+    {
+        "id": "282a63d3.6cfbe4",
+        "type": "set properties",
+        "z": "f5d52e50a36fc5fd",
+        "deviceId": "002",
+        "schema": "fccc0105.d3f1b8",
+        "name": "",
+        "propAll": false,
+        "prop": "55cd4a1f9bfb",
+        "valueType": "msg",
+        "value": "payload",
+        "x": 540,
+        "y": 280,
+        "wires": [
+            [
+                "9a730bc9.a2b97"
+            ]
+        ]
+    },
+    {
+        "id": "30dfc6c6.7e93ea",
+        "type": "set properties",
+        "z": "f5d52e50a36fc5fd",
+        "deviceId": "003",
+        "schema": "fccc0105.d3f1b8",
+        "name": "",
+        "propAll": false,
+        "prop": "55cd4a1f9bfb",
+        "valueType": "msg",
+        "value": "payload",
+        "x": 540,
+        "y": 320,
+        "wires": [
+            [
+                "9c97842a.f5a05"
+            ]
+        ]
+    },
+    {
+        "id": "e04f724e.ccec8",
+        "type": "set properties",
+        "z": "f5d52e50a36fc5fd",
+        "deviceId": "004",
+        "schema": "fccc0105.d3f1b8",
+        "name": "",
+        "propAll": false,
+        "prop": "55cd4a1f9bfb",
+        "valueType": "msg",
+        "value": "payload",
+        "x": 540,
+        "y": 360,
+        "wires": [
+            [
+                "887a8931.f4f8"
+            ]
+        ]
+    },
+    {
+        "id": "dcb9e696.b780e8",
+        "type": "device listener",
+        "z": "f5d52e50a36fc5fd",
+        "monitor": "property",
+        "monitorAll": true,
+        "deviceId": "",
+        "allDeviceIds": true,
+        "allSchemas": true,
+        "allProps": true,
+        "schema": "fccc0105.d3f1b8",
+        "props": [],
+        "name": "",
+        "x": 120,
+        "y": 420,
+        "wires": [
+            [
+                "a3947a58.744ac"
+            ]
+        ]
+    },
+    {
+        "id": "9afe979a42b68daf",
+        "type": "inject",
+        "z": "f5d52e50a36fc5fd",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 40,
+        "wires": [
+            [
+                "6e7c086da927a940",
+                "9b6bb46b.05fc28",
+                "4f22536a06a1b886",
+                "73bb7851.2cd4b8",
+                "e4139d20.3d2ea",
+                "554f44f9.96e69c"
+            ]
+        ]
+    },
+    {
+        "id": "6e7c086da927a940",
+        "type": "trigger",
+        "z": "f5d52e50a36fc5fd",
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "-5",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 140,
+        "y": 240,
+        "wires": [
+            [
+                "d15d0e389c075df5"
+            ]
+        ]
+    },
+    {
+        "id": "d15d0e389c075df5",
+        "type": "random",
+        "z": "f5d52e50a36fc5fd",
+        "name": "",
+        "low": "32",
+        "high": "38",
+        "inte": "true",
+        "property": "payload",
+        "x": 340,
+        "y": 240,
+        "wires": [
+            [
+                "e23ea22b.f9185"
+            ]
+        ]
+    },
+    {
+        "id": "ceb917a3f4c6a6c1",
+        "type": "random",
+        "z": "f5d52e50a36fc5fd",
+        "name": "",
+        "low": "32",
+        "high": "38",
+        "inte": "true",
+        "property": "payload",
+        "x": 340,
+        "y": 280,
+        "wires": [
+            [
+                "282a63d3.6cfbe4"
+            ]
+        ]
+    },
+    {
+        "id": "a3b0e3d172f89af2",
+        "type": "random",
+        "z": "f5d52e50a36fc5fd",
+        "name": "",
+        "low": "32",
+        "high": "38",
+        "inte": "true",
+        "property": "payload",
+        "x": 340,
+        "y": 320,
+        "wires": [
+            [
+                "30dfc6c6.7e93ea"
+            ]
+        ]
+    },
+    {
+        "id": "79a73f2a671a8be6",
+        "type": "random",
+        "z": "f5d52e50a36fc5fd",
+        "name": "",
+        "low": "32",
+        "high": "38",
+        "inte": "true",
+        "property": "payload",
+        "x": 340,
+        "y": 360,
+        "wires": [
+            [
+                "e04f724e.ccec8"
+            ]
+        ]
+    },
+    {
+        "id": "81a943d1f7c73784",
+        "type": "file",
+        "z": "f5d52e50a36fc5fd",
+        "name": "",
+        "filename": "/home/me/Desktop/Nodered/data.csv",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 610,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "452f3c0408c61e79",
+        "type": "debug",
+        "z": "f5d52e50a36fc5fd",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "d97e5a1778ff9366",
+        "type": "function",
+        "z": "f5d52e50a36fc5fd",
+        "name": "",
+        "func": "//variables\n\nTx = global.get('Tx');\nconst privateKey = \"8f2a55949038a9610f50fb23b5883af3b4ecb3c3bb792cbcefbd1542c692be63\";\nconst Provider = new PrivateKeyProvider(privateKey, \"http://127.0.0.1:8545\");\nconst w3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:8545'));\nw3.setProvider(Provider);\n//Contract.setProvider(Provider);\n\nvar abi = [\n\t{\n\t\t\"inputs\": [\n\t\t\t{\n\t\t\t\t\"internalType\": \"int256\",\n\t\t\t\t\"name\": \"id\",\n\t\t\t\t\"type\": \"int256\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"internalType\": \"string\",\n\t\t\t\t\"name\": \"time\",\n\t\t\t\t\"type\": \"string\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"internalType\": \"int256\",\n\t\t\t\t\"name\": \"value\",\n\t\t\t\t\"type\": \"int256\"\n\t\t\t}\n\t\t],\n\t\t\"name\": \"addData\",\n\t\t\"outputs\": [],\n\t\t\"stateMutability\": \"payable\",\n\t\t\"type\": \"function\"\n\t},\n\t{\n\t\t\"inputs\": [\n\t\t\t{\n\t\t\t\t\"internalType\": \"uint256\",\n\t\t\t\t\"name\": \"\",\n\t\t\t\t\"type\": \"uint256\"\n\t\t\t}\n\t\t],\n\t\t\"name\": \"dataSet\",\n\t\t\"outputs\": [\n\t\t\t{\n\t\t\t\t\"internalType\": \"int256\",\n\t\t\t\t\"name\": \"sensorId\",\n\t\t\t\t\"type\": \"int256\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"internalType\": \"string\",\n\t\t\t\t\"name\": \"timeStamp\",\n\t\t\t\t\"type\": \"string\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"internalType\": \"int256\",\n\t\t\t\t\"name\": \"value\",\n\t\t\t\t\"type\": \"int256\"\n\t\t\t}\n\t\t],\n\t\t\"stateMutability\": \"view\",\n\t\t\"type\": \"function\"\n\t},\n\t{\n\t\t\"inputs\": [\n\t\t\t{\n\t\t\t\t\"internalType\": \"int256\",\n\t\t\t\t\"name\": \"givenId\",\n\t\t\t\t\"type\": \"int256\"\n\t\t\t}\n\t\t],\n\t\t\"name\": \"getAllDataBySensor\",\n\t\t\"outputs\": [\n\t\t\t{\n\t\t\t\t\"components\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"internalType\": \"int256\",\n\t\t\t\t\t\t\"name\": \"sensorId\",\n\t\t\t\t\t\t\"type\": \"int256\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"internalType\": \"string\",\n\t\t\t\t\t\t\"name\": \"timeStamp\",\n\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"internalType\": \"int256\",\n\t\t\t\t\t\t\"name\": \"value\",\n\t\t\t\t\t\t\"type\": \"int256\"\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"internalType\": \"struct DataStorage.Data[]\",\n\t\t\t\t\"name\": \"returnData\",\n\t\t\t\t\"type\": \"tuple[]\"\n\t\t\t}\n\t\t],\n\t\t\"stateMutability\": \"view\",\n\t\t\"type\": \"function\"\n\t},\n\t{\n\t\t\"inputs\": [\n\t\t\t{\n\t\t\t\t\"internalType\": \"uint256\",\n\t\t\t\t\"name\": \"arrayPointer\",\n\t\t\t\t\"type\": \"uint256\"\n\t\t\t}\n\t\t],\n\t\t\"name\": \"getData\",\n\t\t\"outputs\": [\n\t\t\t{\n\t\t\t\t\"components\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"internalType\": \"int256\",\n\t\t\t\t\t\t\"name\": \"sensorId\",\n\t\t\t\t\t\t\"type\": \"int256\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"internalType\": \"string\",\n\t\t\t\t\t\t\"name\": \"timeStamp\",\n\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"internalType\": \"int256\",\n\t\t\t\t\t\t\"name\": \"value\",\n\t\t\t\t\t\t\"type\": \"int256\"\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"internalType\": \"struct DataStorage.Data\",\n\t\t\t\t\"name\": \"returnData\",\n\t\t\t\t\"type\": \"tuple\"\n\t\t\t}\n\t\t],\n\t\t\"stateMutability\": \"view\",\n\t\t\"type\": \"function\"\n\t}\n];\n\nconst account = '0xfe3b557e8fb62b89f4916b721be55ceb828dbd73';\nconst contract_address = '0x9a3DBCa554e9f6b9257aAa24010DA8377C57c17e';\n//const gasPrice = w3.eth.getGasPrice();\n//const Nonce = Number(w3.eth.getTransactionCount(account));\nvar contract = new Contract(abi, contract_address, Provider);\n//const gasEstimate = contract.methods.addData(msg.sensorId, msg.date, msg.Value).estimateGas();\n\nvar trans = {\n'from': account,\n'to': contract_address,\n'gasPrice': 0,\n'gas': 100000,\n//'nonce': Nonce+1,\n'value': 1,\n'chainId': w3.eth.net.getId,\n'data': contract.methods.addData(msg.sensorId, msg.date, msg.Value).encodeABI(),\n}\n\nconst signPromise = w3.eth.signTransaction(trans, trans.from);\n\nsignPromise.then((signedTx) => {\n  const sentTx = w3.eth.sendSignedTransaction(signedTx.raw || signedTx.rawTransaction);  sentTx.on(\"receipt\", receipt => {\n  });\n  sentTx.on(\"error\", err => {\n  });\n}).catch((err) => {\n  console.error(err);\n});",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "Web3",
+                "module": "web3"
+            },
+            {
+                "var": "PrivateKeyProvider",
+                "module": "@truffle/hdwallet-provider"
+            },
+            {
+                "var": "Contract",
+                "module": "web3-eth-contract"
+            }
+        ],
+        "x": 560,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eb891fadecb66b4d",
+        "type": "function",
+        "z": "f5d52e50a36fc5fd",
+        "name": "",
+        "func": "var provider = ethers.getDefaultProvider('http://localhost:8545');\nvar account  = '0xfe3b557e8fb62b89f4916b721be55ceb828dbd73';\nvar privateKey = \"0x8f2a55949038a9610f50fb23b5883af3b4ecb3c3bb792cbcefbd1542c692be63\";\nvar wallet = new ethers.Wallet(privateKey,provider);\nvar address = '0x9a3DBCa554e9f6b9257aAa24010DA8377C57c17e';\n\nvar abi = [\n\t{\n\t\t\"inputs\": [\n\t\t\t{\n\t\t\t\t\"internalType\": \"int256\",\n\t\t\t\t\"name\": \"id\",\n\t\t\t\t\"type\": \"int256\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"internalType\": \"string\",\n\t\t\t\t\"name\": \"time\",\n\t\t\t\t\"type\": \"string\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"internalType\": \"int256\",\n\t\t\t\t\"name\": \"value\",\n\t\t\t\t\"type\": \"int256\"\n\t\t\t}\n\t\t],\n\t\t\"name\": \"addData\",\n\t\t\"outputs\": [],\n\t\t\"stateMutability\": \"payable\",\n\t\t\"type\": \"function\"\n\t},\n\t{\n\t\t\"inputs\": [\n\t\t\t{\n\t\t\t\t\"internalType\": \"uint256\",\n\t\t\t\t\"name\": \"\",\n\t\t\t\t\"type\": \"uint256\"\n\t\t\t}\n\t\t],\n\t\t\"name\": \"dataSet\",\n\t\t\"outputs\": [\n\t\t\t{\n\t\t\t\t\"internalType\": \"int256\",\n\t\t\t\t\"name\": \"sensorId\",\n\t\t\t\t\"type\": \"int256\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"internalType\": \"string\",\n\t\t\t\t\"name\": \"timeStamp\",\n\t\t\t\t\"type\": \"string\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"internalType\": \"int256\",\n\t\t\t\t\"name\": \"value\",\n\t\t\t\t\"type\": \"int256\"\n\t\t\t}\n\t\t],\n\t\t\"stateMutability\": \"view\",\n\t\t\"type\": \"function\"\n\t},\n\t{\n\t\t\"inputs\": [\n\t\t\t{\n\t\t\t\t\"internalType\": \"int256\",\n\t\t\t\t\"name\": \"givenId\",\n\t\t\t\t\"type\": \"int256\"\n\t\t\t}\n\t\t],\n\t\t\"name\": \"getAllDataBySensor\",\n\t\t\"outputs\": [\n\t\t\t{\n\t\t\t\t\"components\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"internalType\": \"int256\",\n\t\t\t\t\t\t\"name\": \"sensorId\",\n\t\t\t\t\t\t\"type\": \"int256\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"internalType\": \"string\",\n\t\t\t\t\t\t\"name\": \"timeStamp\",\n\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"internalType\": \"int256\",\n\t\t\t\t\t\t\"name\": \"value\",\n\t\t\t\t\t\t\"type\": \"int256\"\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"internalType\": \"struct DataStorage.Data[]\",\n\t\t\t\t\"name\": \"returnData\",\n\t\t\t\t\"type\": \"tuple[]\"\n\t\t\t}\n\t\t],\n\t\t\"stateMutability\": \"view\",\n\t\t\"type\": \"function\"\n\t},\n\t{\n\t\t\"inputs\": [\n\t\t\t{\n\t\t\t\t\"internalType\": \"uint256\",\n\t\t\t\t\"name\": \"arrayPointer\",\n\t\t\t\t\"type\": \"uint256\"\n\t\t\t}\n\t\t],\n\t\t\"name\": \"getData\",\n\t\t\"outputs\": [\n\t\t\t{\n\t\t\t\t\"internalType\": \"int256\",\n\t\t\t\t\"name\": \"Id\",\n\t\t\t\t\"type\": \"int256\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"internalType\": \"string\",\n\t\t\t\t\"name\": \"time\",\n\t\t\t\t\"type\": \"string\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"internalType\": \"int256\",\n\t\t\t\t\"name\": \"sensorvalue\",\n\t\t\t\t\"type\": \"int256\"\n\t\t\t}\n\t\t],\n\t\t\"stateMutability\": \"view\",\n\t\t\"type\": \"function\"\n\t}\n];\n\nvar contract = new ethers.Contract(address,abi,wallet);\nvar sendPromise = contract.addData(msg.deviceId, msg.date, msg.Value);\n\n/*\nsendPromise.then(function(transaction){\n  console.log(transaction);\n});\n*/\n\nasync function main() {\nconst tx = await contract.addData(msg.deviceId, msg.date, msg.Value);\nawait tx.wait();\n}\n\nmain();",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "ethers",
+                "module": "ethers"
+            }
+        ],
+        "x": 560,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4f22536a06a1b886",
+        "type": "trigger",
+        "z": "f5d52e50a36fc5fd",
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "-3",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 140,
+        "y": 280,
+        "wires": [
+            [
+                "ceb917a3f4c6a6c1"
+            ]
+        ]
+    },
+    {
+        "id": "bf01df51262b2bdc",
+        "type": "trigger",
+        "z": "f5d52e50a36fc5fd",
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "-5",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 140,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fccc0105.d3f1b8",
+        "type": "Device Schema",
+        "deviceType": "TempSensor",
+        "props": [
+            {
+                "guid": "409c86185570",
+                "name": "Time",
+                "defaultValue": {
+                    "type": "date",
+                    "value": ""
+                }
+            },
+            {
+                "guid": "55cd4a1f9bfb",
+                "name": "Temperature",
+                "random": {
+                    "func": "integer",
+                    "args": {
+                        "min": 32,
+                        "max": 38
+                    }
+                }
+            }
+        ],
+        "evts": [
+            {
+                "guid": "d5783c1af12a",
+                "name": "TempChange",
+                "payload": {
+                    "properties": {
+                        "0": "55cd4a1f9bfb",
+                        "length": 1,
+                        "prevObject": {
+                            "0": "55cd4a1f9bfb",
+                            "length": 1,
+                            "prevObject": {
+                                "0": {},
+                                "length": 1,
+                                "prevObject": {
+                                    "0": {
+                                        "sizzle1636670324969": {
+                                            "undefined": {
+                                                "parentNode": [
+                                                    489,
+                                                    37,
+                                                    true
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "length": 1
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    }
+]

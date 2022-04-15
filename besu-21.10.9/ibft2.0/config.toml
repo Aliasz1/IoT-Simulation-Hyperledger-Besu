@@ -1,0 +1,19 @@
+# Valid TOML config file
+data-path="./data" # Path
+
+# Network
+bootnodes=["enode://68fbcc9525a04883cf65b0ca4c7819b2d2f21b1127a846072de958ce17fe243a8e13a15d738ad41348946d3e631c27dc24d4c2d1fd122432f0159511469c513f@127.0.0.1:30303"]
+
+#p2p-host="localhost"
+
+rpc-http-api=["ETH","NET","WEB3","IBFT"]
+#rpc-http-host="localhost"
+
+# Chain
+genesis-file="../genesis.json" # Path to the custom genesis file
+#auto-log-bloom-caching-enabled=false
+#discovery-enabled=false
+#logging="DEBUG"
+miner-coinbase="0xfe3b557e8fb62b89f4916b721be55ceb828dbd73"
+miner-enabled=true
+min-gas-price=0

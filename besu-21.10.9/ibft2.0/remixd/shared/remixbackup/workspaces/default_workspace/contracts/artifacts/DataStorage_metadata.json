@@ -1,0 +1,126 @@
+{
+	"compiler": {
+		"version": "0.8.13+commit.abaa5c0e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "Id",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "time",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "sensorvalue",
+						"type": "uint256"
+					}
+				],
+				"name": "addData",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "dataSet",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "sensorId",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "timeStamp",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "pointer",
+						"type": "uint256"
+					}
+				],
+				"name": "getData",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "Id",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "time",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "sensorvalue",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"remixbackup/workspaces/default_workspace/contracts/SimpleStorage.sol": "DataStorage"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"remixbackup/workspaces/default_workspace/contracts/SimpleStorage.sol": {
+			"keccak256": "0x07283f4a7eaa4985f5729317c3eb87fa15abb8bfb322abc80bf3bc8a4bf937d9",
+			"urls": [
+				"bzz-raw://dd4ec36f694d309729c606cb8ecf10c5b899dce45b34fa58258e9184c7df3e13",
+				"dweb:/ipfs/QmdqGT6rn3TMTPbyppkkbax6faq8VPeafrmFxTmG32PLYC"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,169 @@
+{
+	"compiler": {
+		"version": "0.8.13+commit.abaa5c0e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "int256",
+						"name": "id",
+						"type": "int256"
+					},
+					{
+						"internalType": "string",
+						"name": "time",
+						"type": "string"
+					},
+					{
+						"internalType": "int256",
+						"name": "value",
+						"type": "int256"
+					}
+				],
+				"name": "addData",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "dataSet",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "sensorId",
+						"type": "int256"
+					},
+					{
+						"internalType": "string",
+						"name": "timeStamp",
+						"type": "string"
+					},
+					{
+						"internalType": "int256",
+						"name": "value",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "int256",
+						"name": "givenId",
+						"type": "int256"
+					}
+				],
+				"name": "getAllDataBySensor",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "int256",
+								"name": "sensorId",
+								"type": "int256"
+							},
+							{
+								"internalType": "string",
+								"name": "timeStamp",
+								"type": "string"
+							},
+							{
+								"internalType": "int256",
+								"name": "value",
+								"type": "int256"
+							}
+						],
+						"internalType": "struct DataStorage.Data[]",
+						"name": "returnData",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "arrayPointer",
+						"type": "uint256"
+					}
+				],
+				"name": "getData",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "int256",
+								"name": "sensorId",
+								"type": "int256"
+							},
+							{
+								"internalType": "string",
+								"name": "timeStamp",
+								"type": "string"
+							},
+							{
+								"internalType": "int256",
+								"name": "value",
+								"type": "int256"
+							}
+						],
+						"internalType": "struct DataStorage.Data",
+						"name": "returnData",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"DataStorage.sol": "DataStorage"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"DataStorage.sol": {
+			"keccak256": "0x865f972fa4428be410b9a2ca7544d0ae3cad3c401fbccee50ad8a2e14f553265",
+			"urls": [
+				"bzz-raw://57c26eb19f172abb5d6eca6593f2fcde1bead32fac1faab9bf4302e7a528357a",
+				"dweb:/ipfs/QmUYt9JfDxB7ki5qQ9XeQz9eTf3cfJENbyGVcPNBiiRnkF"
+			]
+		}
+	},
+	"version": 1
+}

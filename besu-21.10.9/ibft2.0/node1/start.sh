@@ -1,0 +1,1 @@
+../../bin/besu --data-path=./data --genesis-file=../genesis.json --host-whitelist='*' --rpc-http-cors-origins='*' --min-gas-price=0 --rpc-http-enabled --rpc-http-api=ETH,NET,WEB3 --rpc-http-host=0.0.0.0 --rpc-http-port=8545 --network-id=9077 --miner-enabled --miner-coinbase=0xfe3b557e8fb62b89f4916b721be55ceb828dbd73
