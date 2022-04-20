@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import DSContract from "./DataStorage.json";
 import getWeb3 from "./getWeb3";
+import moment from 'moment';
 
 import "./App.css";
 
 class App extends Component {
-  state = {storageValue: 0, web3: null, account: null, contract: null };
+  state = {storageValue: 0, getId: 0, getTime: 0, web3: null, account: null, contract: null, getValue: 0 };
 
   componentDidMount = async () => {
     try {
@@ -13,7 +14,7 @@ class App extends Component {
       const web3 = await getWeb3();
 
       // Use web3 to get the user's accounts.
-      const account = '0xfe3b557e8fb62b89f4916b721be55ceb828dbd73';
+      const account = '0xFE3B557E8Fb62b89F4916B721be55cEb828dBd73';
 
       // Get the contract instance.
       const deployedNetwork = '9077';
@@ -33,25 +34,54 @@ class App extends Component {
       console.error(error);
     }
   };
-
+  
   runExample = async () => {
-    const { account, contract } = this.state;
-
-    // Stores a given value, 5 by default.
-    //await contract.methods.getData(0).send({ from: account });
-
-    // Get the value from the contract to prove it worked.
+    const contract = this.state.contract;
     
-    const data = await contract.methods.getData(10);
+    const data = await contract.methods.getData(0).call();
     const response = {
     	sensorId: data.sensorId,
     	timeStamp: data.timeStamp,
     	value: data.value
     };
+    moment().format();
+    var time = moment.unix(response.timeStamp);
+    time = time.toString();
 
     // Update state with the result.
-    this.setState({ storageValue: response.sensorId });
+        this.setState({ getId: response.sensorId });
+    	this.setState({ getTime: time });
+    	this.setState({ storageValue: response.value });
   };
+  
+  constructor(props){
+	super(props);
+
+	this.updateInput = this.updateInput.bind(this);
+	this.handleSubmit = this.handleSubmit.bind(this);
+	};
+
+  updateInput(event){
+	this.setState({getValue : event.target.value})
+	};
+
+  handleSubmit = async () => {
+  	const contract = this.state.contract;
+
+  	const data = await contract.methods.getData(this.state.getValue).call();
+    	const response = {
+    		sensorId: data.sensorId,
+    		timeStamp: data.timeStamp,
+    		value: data.value
+    	};
+    	
+    	moment().format();
+    	var time = moment.unix(response.timeStamp);
+    	time = time.toString();
+    	this.setState({ getId: response.sensorId });
+    	this.setState({ getTime: time });
+    	this.setState({ storageValue: response.value });
+	};
 
   render() {
     if (!this.state.web3) {
@@ -59,24 +89,22 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <h1>Connected with: {this.state.account}</h1>
-        <p>React is ready.</p>
-        <h2>Interacting with Smart Contract</h2>
-        <p>
-          Contracts have been compiled and deployed.
-        </p>
-        <p>
-           Change methods on App.js
-        </p>
-        <Button
-          onPress={this.state.storageValue = 5}
-          title="Function here should get the value from the blockchain. NOT IMPLEMENTED"
-        />
-        <Button
-          onPress={this.state.storageValue = 10}
-          title="Function here should get the value from the blockchain. NOT IMPLEMENTED"
-        />
-        <div>The stored value in blockchain: {this.state.storageValue}</div>
+        <h1>ReactJS Interface</h1>
+        <p>Account connected: {this.state.account}</p>
+        <br></br>
+        <h2>Data Storage Contract</h2>
+        
+        <div>
+        <p>Enter number to get from array</p>
+		<input type="number" onChange={this.updateInput}></input>
+    		<input type="submit" onClick={this.handleSubmit}></input>
+      	</div>
+        
+        <div>
+        <p>The sensor id is: {this.state.getId}</p>
+        <p>The time sent is: {this.state.getTime}</p>
+	<p>The stored value is: {this.state.storageValue}</p>
+        </div>
       </div>
     );
   }
